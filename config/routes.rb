@@ -5,13 +5,17 @@ Rails.application.routes.draw do
     collection do
       post :confirm
     end
-   end
+  end
+   
+  post 'blogs/new' => 'blogs#new'
   
   resources :contacts, only: [:index, :new, :create] do
     collection do
       post :confirm
     end
   end
+  
+  post 'contacts/new' => 'contacts#new'
   
   root 'top#index'
   
